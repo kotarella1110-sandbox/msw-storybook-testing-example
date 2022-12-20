@@ -11,13 +11,13 @@ export const App = () => {
   if (isLoading) return <div>loading...</div>;
 
   return (
-    <main>
+    <div>
       <div>
         First Name: <span>{data?.firstName}</span>
       </div>
       <div>
         Last Name: <span>{data?.lastName}</span>
       </div>
-    </main>
+    </div>
   );
 };
