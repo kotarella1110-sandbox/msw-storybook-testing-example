@@ -11,17 +11,28 @@
     "check:prettier": "prettier . --ignore-path .gitignore --check",
     "fix": "run-s fix:*",
     "fix:eslint": "eslint . --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore --fix",
-    "fix:prettier": "prettier . --ignore-path .gitignore --write --cache"
+    "fix:prettier": "prettier . --ignore-path .gitignore --write --cache",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.20.5",
+    "@storybook/addon-actions": "^6.5.14",
+    "@storybook/addon-essentials": "^6.5.14",
+    "@storybook/addon-interactions": "^6.5.14",
+    "@storybook/addon-links": "^6.5.14",
+    "@storybook/builder-vite": "^0.2.6",
+    "@storybook/react": "^6.5.14",
+    "@storybook/testing-library": "^0.0.13",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
     "@typescript-eslint/eslint-plugin": "^5.47.0",
     "@vitejs/plugin-react-swc": "^3.0.0",
+    "babel-loader": "^8.3.0",
     "eslint": "^8.30.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-jest-dom": "^4.0.3",
