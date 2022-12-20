@@ -1,3 +1,23 @@
+import useSWR from "swr";
+import { fetcher } from "../utils/fetcher";
+
 export const App = () => {
-  return <div>App</div>;
+  const { data, error, isLoading } = useSWR<{
+    firstName: string;
+    lastName: string;
+  }>("/profile", fetcher);
+
+  if (error) return <div>failed to load</div>;
+  if (isLoading) return <div>loading...</div>;
+
+  return (
+    <main>
+      <div>
+        First Name: <span>{data?.firstName}</span>
+      </div>
+      <div>
+        Last Name: <span>{data?.lastName}</span>
+      </div>
+    </main>
+  );
 };
