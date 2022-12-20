@@ -1,8 +1,8 @@
-import { server } from "./src/mocks/server";
+import { setGlobalConfig } from "@storybook/testing-react";
+import * as globalStorybookConfig from "./.storybook/preview";
 
 import "@testing-library/jest-dom";
 import "whatwg-fetch";
 
-beforeAll(() => server.listen());
-afterEach(() => server.resetHandlers());
-afterAll(() => server.close());
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+setGlobalConfig(globalStorybookConfig as any);
